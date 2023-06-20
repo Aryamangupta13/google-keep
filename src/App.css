@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.headder{
+    width: 100%;   
+    background-color: rgb(255, 201, 25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    box-shadow:5px 5px 5px rgb(116, 113, 113);
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-box{
+    height: 200px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.deleteIcon{
+    width: 0.7em;
+    height: 0.7em;
+}
+.main_note{
+    width: 500px;
+    padding: 15px 10px 5px 10px;
+    margin: 20px auto;
+}
+.my_notes{
+    display: flex;  
+    flex-wrap:wrap;     
+}
+.my_notes h1{
+    color: #34495e;
+}
+.my_notes p{
+    color: grey;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    min-height: 50px;
+    color: #ecf0f1;
+    padding: 15px 10px 5px 10px;
+    box-shadow: 3px 5px 15px -5px rgba(0,0,0,0.6);
+    border-radius: 10px;
+    position: relative;
+}
+input{
+    width: 100%;
+    line-height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    margin: 10px 0;
+    font-weight: bold;
+
+}
+textarea{
+    width: 100%;
+    line-height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+.main-but{      
+    padding-left: 85%;
+    padding-top: 1%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.note{
+    width:250px;
+    padding: 15px 10px 5px 10px;
+    margin:50px 10px 10px 10px;
+    box-shadow: 3px 5px 15px -5px rgba(0,0,0,0.6);
+    border-radius: 10px;
+    overflow: auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.note-but{
+    padding-left: 80%;
 }

@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Headder from "./Headder";
+import Footer from './Footer'
+import CreateNode from "./CreateNote";
+import './App.css'
+import Note from './Note.jsx'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App=()=>{
+    const [notesarray,setnotesarray]=useState([]);
+    
+    const arradd=(newnote)=>{
+        setnotesarray((old)=>{
+            return [
+                ...old,newnote
+            ]
+        })
+    }
+    const deletearr=(keypass)=>{
+        console.log(keypass);
+        setnotesarray((old)=>
+            old.filter((currdata,indx)=>{
+                return indx!=keypass;}))
+    }
+    return(
+        <>
+            <Headder/>
+            <br/>
+            <CreateNode passednote={arradd}/>
+            <br/>
+            <div className="my_notes">
+                {
+                    notesarray.map((val,ind)=>{
+                        return(
+                          <Note key={ind}
+                                id={ind}
+                                title={val.title}   
+                                content={val.content}
+                                eledel={deletearr}
+                                />
+                        );
+                    })
+                } 
+            </div>
+            <br/>
+            <Footer/>
+        </>
+    );
 }
 
 export default App;
